@@ -31,4 +31,13 @@ class TmdbService
             'query' => $query
         ])->json();
     }
+
+    public function getMovieDetails($movieId)
+{
+    return Http::get($this->baseUrl . "/movie/{$movieId}", [
+        'api_key' => $this->apiKey,
+        'language' => 'it-IT'
+    ])->json();
+}
+
 }
